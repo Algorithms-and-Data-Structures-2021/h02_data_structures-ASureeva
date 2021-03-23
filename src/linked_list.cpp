@@ -99,7 +99,10 @@ namespace itis {
             delete [] curr;
             curr = head_;
         }
-        head_->data = Element::UNINITIALIZED;
+        Node* node = new Node(Element::UNINITIALIZED, nullptr);
+        head_ = node;
+        tail_ = head_;
+//        head_->data = Element::UNINITIALIZED;
         size_ = 0;
         // Tip 1: люди в черном (MIB) пришли стереть вам память
         // напишите свой код здесь ...
