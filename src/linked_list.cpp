@@ -100,7 +100,10 @@ void LinkedList::Clear() {
         delete [] curr;
         curr = head_;
     }
+    delete[] head_;
+    head_->next = nullptr;
     head_->data = Element::UNINITIALIZED;
+    tail_ = head_;
     size_ = 0;
   // Tip 1: люди в черном (MIB) пришли стереть вам память
   // напишите свой код здесь ...
