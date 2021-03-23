@@ -94,15 +94,18 @@ void LinkedList::Clear() {
 
     auto curr = head_;
 
-    for(int i = 0; i < size_ - 1; i++){
+    for(int i = 0; i < size_; i++){
         head_ = head_->next;
         curr -> next = nullptr;
         delete [] curr;
         curr = head_;
     }
     delete[] head_;
-    head_->next = nullptr;
-    head_->data = Element::UNINITIALIZED;
+    delete[] tail_;
+    delete[] curr;
+//    head_->next = nullptr;
+//    head_->data = Element::UNINITIALIZED;
+    head_ = new Node(Element::UNINITIALIZED, nullptr);
     tail_ = head_;
     size_ = 0;
   // Tip 1: люди в черном (MIB) пришли стереть вам память
