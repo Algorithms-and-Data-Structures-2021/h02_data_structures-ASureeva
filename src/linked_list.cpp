@@ -93,7 +93,7 @@ namespace itis {
 
         auto curr = head_;
 
-        for(int i = 0; i < size_ - 1; i++){
+        for(int i = 0; i < size_; i++){
             head_ = head_->next;
             curr -> next = nullptr;
             delete [] curr;
