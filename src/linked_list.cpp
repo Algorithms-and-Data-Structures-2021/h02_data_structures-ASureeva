@@ -100,9 +100,6 @@ void LinkedList::Clear() {
         delete [] curr;
         curr = head_;
     }
-    delete[] head_;
-    delete[] tail_;
-    delete[] curr;
 //    head_->next = nullptr;
 //    head_->data = Element::UNINITIALIZED;
     head_ = new Node(Element::UNINITIALIZED, nullptr);
