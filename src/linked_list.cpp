@@ -26,18 +26,19 @@ void LinkedList::Add(Element e) {
 
 void LinkedList::Insert(int index, Element e) {
   internal::check_out_of_range(index, 0, size_ + 1);
-  Node* node = new Node(e, nullptr);
   if (index == size_ || size_ == 0) {
       Add(e);
       return;
   }
   if (index == 0){
+      Node* node = new Node(e, nullptr);
       auto curr = head_;
       head_ = node;
       head_ -> next = curr;
       size_ ++;
       return;
   }
+  Node* node = new Node(e, nullptr);
   auto curr = find_node(index - 1);
   node -> next = curr -> next;
   curr -> next = node;
